@@ -1,0 +1,213 @@
+Sep-25 17:11:48.111 [main] DEBUG nextflow.cli.Launcher - $> nextflow main.nf -c nextflow.config -profile docker -params-file test.json -w run05-test/work
+Sep-25 17:11:48.174 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 23.10.1
+Sep-25 17:11:48.183 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; embedded=false; plugins-dir=/root/.nextflow/plugins; core-plugins: nf-amazon@2.1.4,nf-azure@1.3.3,nf-cloudcache@0.3.0,nf-codecommit@0.1.5,nf-console@1.0.6,nf-ga4gh@1.1.0,nf-google@1.8.3,nf-tower@1.6.3,nf-wave@1.0.1
+Sep-25 17:11:48.187 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+Sep-25 17:11:48.187 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+Sep-25 17:11:48.188 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.4.1 in 'deployment' mode
+Sep-25 17:11:48.193 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+Sep-25 17:11:48.200 [main] DEBUG nextflow.config.ConfigBuilder - Found config local: /home/user2/Downloads/idat2vcf/nextflow.config
+Sep-25 17:11:48.201 [main] DEBUG nextflow.config.ConfigBuilder - User config file: /home/user2/Downloads/idat2vcf/nextflow.config
+Sep-25 17:11:48.201 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /home/user2/Downloads/idat2vcf/nextflow.config
+Sep-25 17:11:48.201 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /home/user2/Downloads/idat2vcf/nextflow.config
+Sep-25 17:11:48.215 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `docker`
+Sep-25 17:11:48.612 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `docker`
+Sep-25 17:11:48.652 [main] DEBUG nextflow.config.ConfigBuilder - Available config profiles: [gitpod, debug, shifter, mamba, charliecloud, apptainer, conda, singularity, arm, docker, podman]
+Sep-25 17:11:48.667 [main] DEBUG nextflow.cli.CmdRun - Applied DSL=2 from script declararion
+Sep-25 17:11:48.681 [main] INFO  nextflow.cli.CmdRun - Launching `main.nf` [boring_bartik] DSL2 - revision: 7361229cb0
+Sep-25 17:11:48.681 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins declared=[nf-validation@1.1.3]
+Sep-25 17:11:48.681 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
+Sep-25 17:11:48.681 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins resolved requirement=[nf-validation@1.1.3]
+Sep-25 17:11:48.681 [main] DEBUG nextflow.plugin.PluginUpdater - Installing plugin nf-validation version: 1.1.3
+Sep-25 17:11:48.685 [main] INFO  org.pf4j.AbstractPluginManager - Plugin 'nf-validation@1.1.3' resolved
+Sep-25 17:11:48.686 [main] INFO  org.pf4j.AbstractPluginManager - Start plugin 'nf-validation@1.1.3'
+Sep-25 17:11:48.689 [main] DEBUG nextflow.plugin.BasePlugin - Plugin started nf-validation@1.1.3
+Sep-25 17:11:48.694 [main] DEBUG n.secret.LocalSecretsProvider - Secrets store: /root/.nextflow/secrets/store.json
+Sep-25 17:11:48.695 [main] DEBUG nextflow.secret.SecretsLoader - Discovered secrets providers: [nextflow.secret.LocalSecretsProvider@5b5ac798] - activable => nextflow.secret.LocalSecretsProvider@5b5ac798
+Sep-25 17:11:48.726 [main] DEBUG nextflow.Session - Session UUID: 3f35240f-1b11-45f7-9d5f-5ef8aca846cd
+Sep-25 17:11:48.727 [main] DEBUG nextflow.Session - Run name: boring_bartik
+Sep-25 17:11:48.727 [main] DEBUG nextflow.Session - Executor pool size: 20
+Sep-25 17:11:48.730 [main] DEBUG nextflow.file.FilePorter - File porter settings maxRetries=3; maxTransfers=50; pollTimeout=null
+Sep-25 17:11:48.732 [main] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'FileTransfer' minSize=10; maxSize=60; workQueue=LinkedBlockingQueue[10000]; allowCoreThreadTimeout=false
+Sep-25 17:11:48.740 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 23.10.1 build 5891
+  Created: 12-01-2024 22:01 UTC (13-01-2024 06:01 MYST)
+  System: Linux 6.8.0-45-generic
+  Runtime: Groovy 3.0.19 on OpenJDK 64-Bit Server VM 19.0.2+7-Ubuntu-0ubuntu322.04
+  Encoding: UTF-8 (UTF-8)
+  Process: 107201@user2-LPC2 [127.0.1.1]
+  CPUs: 20 - Mem: 31.1 GB (15.9 GB) - Swap: 0 (0)
+Sep-25 17:11:48.749 [main] DEBUG nextflow.Session - Work-dir: /home/user2/Downloads/idat2vcf/run05-test/work [ext2/ext3]
+Sep-25 17:11:48.749 [main] DEBUG nextflow.Session - Script base path does not exist or is not a directory: /home/user2/Downloads/idat2vcf/bin
+Sep-25 17:11:48.763 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[]
+Sep-25 17:11:48.767 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
+Sep-25 17:11:48.787 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
+Sep-25 17:11:48.791 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 21; maxThreads: 1000
+Sep-25 17:11:48.845 [main] DEBUG nextflow.Session - Session start
+Sep-25 17:11:48.847 [main] DEBUG nextflow.trace.TraceFileObserver - Workflow started -- trace file: /home/user2/Downloads/idat2vcf/run05-test/pipeline_info/execution_trace_2024-09-25_17-11-48.txt
+Sep-25 17:11:48.851 [main] DEBUG nextflow.Session - Using default localLib path: /home/user2/Downloads/idat2vcf/lib
+Sep-25 17:11:48.852 [main] DEBUG nextflow.Session - Adding to the classpath library: /home/user2/Downloads/idat2vcf/lib
+Sep-25 17:11:49.052 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Sep-25 17:11:49.057 [main] WARN  nextflow.script.ScriptBinding - Access to undefined parameter `genomes` -- Initialise it to a default value eg. `params.genomes = some_value`
+Sep-25 17:11:49.060 [main] DEBUG nextflow.script.IncludeDef - Loading included plugin extensions with names: [validateParameters:validateParameters, paramsHelp:paramsHelp]; plugin Id: nf-validation
+Sep-25 17:11:49.066 [main] DEBUG nextflow.validation.SchemaValidator - Starting parameters validation
+Sep-25 17:11:49.108 [main] DEBUG nextflow.validation.SchemaValidator - Starting validation: 'input': '/home/user2/Downloads/idat2vcf/samplesheet_idats_test.csv' with 'assets/schema_input.json'
+Sep-25 17:11:49.128 [main] DEBUG nextflow.validation.SchemaValidator - Validation passed: 'input': '/home/user2/Downloads/idat2vcf/samplesheet_idats_test.csv' with 'assets/schema_input.json'
+Sep-25 17:11:49.128 [main] DEBUG nextflow.validation.SchemaValidator - Finishing parameters validation
+Sep-25 17:11:49.254 [main] DEBUG nextflow.script.IncludeDef - Loading included plugin extensions with names: [paramsSummaryLog:paramsSummaryLog, paramsSummaryMap:paramsSummaryMap, fromSamplesheet:fromSamplesheet]; plugin Id: nf-validation
+Sep-25 17:11:49.260 [main] INFO  nextflow.Nextflow - 
+
+-[2m----------------------------------------------------[0m-
+                                        [0;32m,--.[0;30m/[0;32m,-.[0m
+[0;34m        ___     __   __   __   ___     [0;32m/,-._.--~'[0m
+[0;34m  |\ | |__  __ /  ` /  \ |__) |__         [0;33m}  {[0m
+[0;34m  | \| |       \__, \__/ |  \ |___     [0;32m\`-._,-`-,[0m
+                                        [0;32m`._,._,'[0m
+[0;35m  synapsys/idat2vcf v1.0[0m
+-[2m----------------------------------------------------[0m-
+[1mCore Nextflow options[0m
+  [0;34mrunName        : [0;32mboring_bartik[0m
+  [0;34mcontainerEngine: [0;32mdocker[0m
+  [0;34mlaunchDir      : [0;32m/home/user2/Downloads/idat2vcf[0m
+  [0;34mworkDir        : [0;32m/home/user2/Downloads/idat2vcf/run05-test/work[0m
+  [0;34mprojectDir     : [0;32m/home/user2/Downloads/idat2vcf[0m
+  [0;34muserName       : [0;32mroot[0m
+  [0;34mprofile        : [0;32mdocker[0m
+  [0;34mconfigFiles    : [0;32m[0m
+
+[1mInput/output options[0m
+  [0;34minput          : [0;32msamplesheet_idats_test.csv[0m
+  [0;34moutdir         : [0;32mrun05-test/[0m
+
+[1mReference file options[0m
+  [0;34mfai            : [0;32m/home/user2/Downloads/refgenome/hg38-nochr/hg38.fa.fai[0m
+  [0;34mfasta          : [0;32m/home/user2/Downloads/refgenome/hg38-nochr/hg38.fa[0m
+  [0;34mmanifest_bpm   : [0;32m/home/user2/Downloads/IDATS/GSA-38/GSA-24v3-0_A2.bpm[0m
+  [0;34mmanifest_csv   : [0;32m/home/user2/Downloads/IDATS/GSA-38/GSA-24v3-0_A2.csv[0m
+  [0;34mclusterfile    : [0;32m/home/user2/Downloads/IDATS/GSA-38/GSA-24v3-0_A1_ClusterFile.egt[0m
+
+!! Only displaying parameters that differ from the pipeline defaults !!
+-[2m----------------------------------------------------[0m-
+If you use synapsys/idat2vcf for your analysis please cite:
+
+* The nf-core framework
+  https://doi.org/10.1038/s41587-020-0439-x
+
+* Software dependencies
+  https://github.com/synapsys/idat2vcf/blob/master/CITATIONS.md
+
+Sep-25 17:11:49.357 [main] DEBUG nextflow.validation.SchemaValidator - Starting validation: 'samplesheet_idats_test.csv' with 'assets/schema_input.json'
+Sep-25 17:11:49.358 [main] DEBUG nextflow.validation.SchemaValidator - Validation passed: 'samplesheet_idats_test.csv' with 'assets/schema_input.json'
+Sep-25 17:11:49.422 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:process_low` matches labels `process_low` for process with name NFCORE_IDAT2VCF:IDAT2VCF:DRAGENA_IDAT2GTC
+Sep-25 17:11:49.423 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:.*DRAGENA_IDAT2GTC` matches process NFCORE_IDAT2VCF:IDAT2VCF:DRAGENA_IDAT2GTC
+Sep-25 17:11:49.424 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:.*DRAGENA_IDAT2GTC` matches process NFCORE_IDAT2VCF:IDAT2VCF:DRAGENA_IDAT2GTC
+Sep-25 17:11:49.426 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Sep-25 17:11:49.426 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Sep-25 17:11:49.428 [main] DEBUG nextflow.executor.Executor - [warm up] executor > local
+Sep-25 17:11:49.431 [main] DEBUG n.processor.LocalPollingMonitor - Creating local task monitor for executor 'local' > cpus=20; memory=31.1 GB; capacity=20; pollInterval=100ms; dumpInterval=5m
+Sep-25 17:11:49.432 [main] DEBUG n.processor.TaskPollingMonitor - >>> barrier register (monitor: local)
+Sep-25 17:11:49.459 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:process_low` matches labels `process_low` for process with name NFCORE_IDAT2VCF:IDAT2VCF:DRAGENA_GTC2VCF
+Sep-25 17:11:49.459 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:.*DRAGENA_GTC2VCF` matches process NFCORE_IDAT2VCF:IDAT2VCF:DRAGENA_GTC2VCF
+Sep-25 17:11:49.459 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:.*DRAGENA_GTC2VCF` matches process NFCORE_IDAT2VCF:IDAT2VCF:DRAGENA_GTC2VCF
+Sep-25 17:11:49.460 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Sep-25 17:11:49.460 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Sep-25 17:11:49.462 [main] DEBUG nextflow.Session - Config process names validation disabled as requested
+Sep-25 17:11:49.462 [main] DEBUG nextflow.Session - Igniting dataflow network (10)
+Sep-25 17:11:49.465 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > NFCORE_IDAT2VCF:IDAT2VCF:DRAGENA_IDAT2GTC
+Sep-25 17:11:49.466 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > NFCORE_IDAT2VCF:IDAT2VCF:DRAGENA_GTC2VCF
+Sep-25 17:11:49.466 [main] DEBUG nextflow.script.ScriptRunner - Parsed script files:
+  Script_6ed6289becf39e4c: /home/user2/Downloads/idat2vcf/./workflows/../subworkflows/dragena_idat2gtc.nf
+  Script_3980f4dbf0f99500: /home/user2/Downloads/idat2vcf/./workflows/idat2vcf.nf
+  Script_f606e6266e6a831f: /home/user2/Downloads/idat2vcf/./workflows/../subworkflows/dragena_gtc2vcf.nf
+  Script_d1d3b931a748b947: /home/user2/Downloads/idat2vcf/main.nf
+Sep-25 17:11:49.466 [main] DEBUG nextflow.script.ScriptRunner - > Awaiting termination 
+Sep-25 17:11:49.466 [main] DEBUG nextflow.Session - Session await
+Sep-25 17:11:49.529 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Sep-25 17:11:49.530 [Task submitter] INFO  nextflow.Session - [53/71193a] Submitted process > NFCORE_IDAT2VCF:IDAT2VCF:DRAGENA_IDAT2GTC (test)
+Sep-25 17:11:50.475 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 1; name: NFCORE_IDAT2VCF:IDAT2VCF:DRAGENA_IDAT2GTC (test); status: COMPLETED; exit: 1; error: -; workDir: /home/user2/Downloads/idat2vcf/run05-test/work/53/71193a59de99122e84ccd387a86dd5]
+Sep-25 17:11:50.478 [Task monitor] DEBUG nextflow.processor.TaskProcessor - Handling unexpected condition for
+  task: name=NFCORE_IDAT2VCF:IDAT2VCF:DRAGENA_IDAT2GTC (test); work-dir=/home/user2/Downloads/idat2vcf/run05-test/work/53/71193a59de99122e84ccd387a86dd5
+  error [nextflow.exception.ProcessFailedException]: Process `NFCORE_IDAT2VCF:IDAT2VCF:DRAGENA_IDAT2GTC (test)` terminated with an error exit status (1)
+Sep-25 17:11:50.487 [Task monitor] ERROR nextflow.processor.TaskProcessor - Error executing process > 'NFCORE_IDAT2VCF:IDAT2VCF:DRAGENA_IDAT2GTC (test)'
+
+Caused by:
+  Process `NFCORE_IDAT2VCF:IDAT2VCF:DRAGENA_IDAT2GTC (test)` terminated with an error exit status (1)
+
+Command executed:
+
+  mkdir -p idat_folder_test
+  mv test_green.idat test_red.idat idat_folder_test/
+  
+  dragena genotype call     --bpm-manifest GSA-24v3-0_A2.bpm     --cluster-file GSA-24v3-0_A1_ClusterFile.egt     --idat-folder idat_folder_test     --output-folder .
+  
+  cat <<-END_VERSIONS > versions.yml
+  "NFCORE_IDAT2VCF:IDAT2VCF:DRAGENA_IDAT2GTC":
+      dragena: v1.2
+  END_VERSIONS
+
+Command exit status:
+  1
+
+Command output:
+  [40m[32minfo[39m[22m[49m: ArrayAnalysis.Services.GenCallingService[0]
+        [09:11:50 2627]: Starting Processing...
+  [40m[32minfo[39m[22m[49m: ArrayAnalysis.Services.GenCallingService[0]
+        [09:11:50 2656]: Inputs:
+        BpmManifestFilePath: GSA-24v3-0_A2.bpm
+        GenCallScoreCutOff: 0.15
+        ClusterFilePath: GSA-24v3-0_A1_ClusterFile.egt
+        IdatFolder: idat_folder_test
+        NumThreads: 1
+        OutputFolder: /home/user2/Downloads/idat2vcf/run05-test/work/53/71193a59de99122e84ccd387a86dd5
+        Debug: False
+        JsonLog: False
+        
+  [40m[32minfo[39m[22m[49m: ArrayAnalysis.Services.SampleFactory[0]
+        [09:11:50 2659]: Crawling idat_folder_test...
+  [40m[1m[33mwarn[39m[22m[49m: ArrayAnalysis.Services.SampleFactory[0]
+        [09:11:50 2674]: idat_folder_test/test_red.idat is not named correctly. It should be of the form: BARCODE_POSITION_(Red|Grn).idat
+  [40m[1m[33mwarn[39m[22m[49m: ArrayAnalysis.Services.SampleFactory[0]
+        [09:11:50 2674]: idat_folder_test/test_green.idat is not named correctly. It should be of the form: BARCODE_POSITION_(Red|Grn).idat
+  [41m[30mfail[39m[22m[49m: ArrayAnalysis.CLI.App[0]
+        [09:11:50 2677]: Zero valid samples found in idat_folder_test.
+
+Command error:
+  [40m[32minfo[39m[22m[49m: ArrayAnalysis.Services.GenCallingService[0]
+        [09:11:50 2627]: Starting Processing...
+  [40m[32minfo[39m[22m[49m: ArrayAnalysis.Services.GenCallingService[0]
+        [09:11:50 2656]: Inputs:
+        BpmManifestFilePath: GSA-24v3-0_A2.bpm
+        GenCallScoreCutOff: 0.15
+        ClusterFilePath: GSA-24v3-0_A1_ClusterFile.egt
+        IdatFolder: idat_folder_test
+        NumThreads: 1
+        OutputFolder: /home/user2/Downloads/idat2vcf/run05-test/work/53/71193a59de99122e84ccd387a86dd5
+        Debug: False
+        JsonLog: False
+        
+  [40m[32minfo[39m[22m[49m: ArrayAnalysis.Services.SampleFactory[0]
+        [09:11:50 2659]: Crawling idat_folder_test...
+  [40m[1m[33mwarn[39m[22m[49m: ArrayAnalysis.Services.SampleFactory[0]
+        [09:11:50 2674]: idat_folder_test/test_red.idat is not named correctly. It should be of the form: BARCODE_POSITION_(Red|Grn).idat
+  [40m[1m[33mwarn[39m[22m[49m: ArrayAnalysis.Services.SampleFactory[0]
+        [09:11:50 2674]: idat_folder_test/test_green.idat is not named correctly. It should be of the form: BARCODE_POSITION_(Red|Grn).idat
+  [41m[30mfail[39m[22m[49m: ArrayAnalysis.CLI.App[0]
+        [09:11:50 2677]: Zero valid samples found in idat_folder_test.
+
+Work dir:
+  /home/user2/Downloads/idat2vcf/run05-test/work/53/71193a59de99122e84ccd387a86dd5
+
+Tip: view the complete command output by changing to the process work dir and entering the command `cat .command.out`
+Sep-25 17:11:50.489 [main] DEBUG nextflow.Session - Session await > all processes finished
+Sep-25 17:11:50.493 [Task monitor] INFO  nextflow.Session - Execution cancelled -- Finishing pending tasks before exit
+Sep-25 17:11:50.495 [Task monitor] DEBUG n.processor.TaskPollingMonitor - <<< barrier arrives (monitor: local) - terminating tasks monitor poll loop
+Sep-25 17:11:50.495 [main] DEBUG nextflow.Session - Session await > all barriers passed
+Sep-25 17:11:50.503 [main] INFO  nextflow.Nextflow - -[0;35m[synapsys/idat2vcf][0;31m Pipeline completed with errors[0m-
+Sep-25 17:11:50.505 [main] DEBUG n.trace.WorkflowStatsObserver - Workflow completed > WorkflowStats[succeededCount=0; failedCount=1; ignoredCount=0; cachedCount=0; pendingCount=0; submittedCount=0; runningCount=0; retriesCount=0; abortedCount=0; succeedDuration=0ms; failedDuration=1.9s; cachedDuration=0ms;loadCpus=0; loadMemory=0; peakRunning=1; peakCpus=2; peakMemory=12 GB; ]
+Sep-25 17:11:50.505 [main] DEBUG nextflow.trace.TraceFileObserver - Workflow completed -- saving trace file
+Sep-25 17:11:50.506 [main] DEBUG nextflow.trace.ReportObserver - Workflow completed -- rendering execution report
+Sep-25 17:11:50.772 [main] DEBUG nextflow.trace.TimelineObserver - Workflow completed -- rendering execution timeline
+Sep-25 17:11:50.904 [main] DEBUG nextflow.cache.CacheDB - Closing CacheDB done
+Sep-25 17:11:50.905 [main] INFO  org.pf4j.AbstractPluginManager - Stop plugin 'nf-validation@1.1.3'
+Sep-25 17:11:50.905 [main] DEBUG nextflow.plugin.BasePlugin - Plugin stopped nf-validation
+Sep-25 17:11:50.919 [main] DEBUG nextflow.util.ThreadPoolManager - Thread pool 'FileTransfer' shutdown completed (hard=false)
+Sep-25 17:11:50.919 [main] DEBUG nextflow.script.ScriptRunner - > Execution complete -- Goodbye

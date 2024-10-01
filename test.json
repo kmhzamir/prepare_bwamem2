@@ -1,0 +1,13 @@
+{
+    "input" : "samplesheet_idats_test.csv",
+    "outdir" : "run05-test/",
+
+    "fasta" : "/home/user2/Downloads/refgenome/hg38-nochr/hg38.fa",
+    "fai": "/home/user2/Downloads/refgenome/hg38-nochr/hg38.fa.fai",
+    "manifest_bpm": "/home/user2/Downloads/IDATS/GSA-38/GSA-24v3-0_A2.bpm",
+    "manifest_csv": "/home/user2/Downloads/IDATS/GSA-38/GSA-24v3-0_A2.csv",
+    "clusterfile" : "/home/user2/Downloads/IDATS/GSA-38/GSA-24v3-0_A1_ClusterFile.egt"
+    
+}
+
+
