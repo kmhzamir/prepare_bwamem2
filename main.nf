@@ -16,11 +16,6 @@ nextflow.enable.dsl = 2
     GENOME PARAMETER VALUES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
-params.fasta                          = WorkflowMain.getGenomeAttribute(params, 'fasta')
-params.fai                            = WorkflowMain.getGenomeAttribute(params, 'fai')
-params.manifest_bpm                   = WorkflowMain.getGenomeAttribute(params, 'manifest_bpm')
-params.manifest_csv                   = WorkflowMain.getGenomeAttribute(params, 'manifest_csv')
-params.clusterfile                    = WorkflowMain.getGenomeAttribute(params, 'clusterfile')
 
 /*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -52,13 +47,13 @@ WorkflowMain.initialise(workflow, params, log, args)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
 
-include { IDAT2VCF } from './workflows/idat2vcf'
+include { PREPARE_BWAMEM2 } from './workflows/prepare_bwamem2'
 
 //
 // WORKFLOW: Run main nf-core/alignment module
 //
-workflow NFCORE_IDAT2VCF {
-    IDAT2VCF ()
+workflow NFCORE_PREPARE_BWAMEM2 {
+    PREPARE_BWAMEM2 ()
 }
 
 /*
@@ -72,7 +67,7 @@ workflow NFCORE_IDAT2VCF {
 // See: https://github.com/nf-core/rnaseq/issues/619
 //
 workflow {
-    NFCORE_IDAT2VCF ()
+    NFCORE_PREPARE_BWAMEM2 ()
 }
 
 /*

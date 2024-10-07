@@ -16,9 +16,8 @@
                     "type": "string",
                     "format": "file-path",
                     "exists": true,
-                    "schema": "assets/schema_input.json",
                     "mimetype": "text/csv",
-                    "pattern": "^\\S+\\.csv$",
+                    "pattern": "^\\S+\\.(fa|fasta)$",
                     "description": "Path to comma-separated file containing information about the samples in the experiment.",
                     "help_text": "You will need to create a design file with information about the samples in your experiment before running the pipeline. Use this parameter to specify its location. It has to be a comma-separated file with 3 columns, and a header row. See [usage docs](https://nf-co.re/raredisease/usage#samplesheet-input).",
                     "fa_icon": "fas fa-file-csv"
@@ -44,61 +43,6 @@
                     "hidden": true
                 }
             }
-        },
-        "reference_file_options": {
-            "title": "Reference file options",
-            "type": "object",
-            "fa_icon": "fas fa-dna",
-            "description": "Reference genome related files and options required for the workflow.",
-            "properties": {
-                "fai": {
-                    "type": "string",
-                    "exists": true,
-                    "format": "file-path",
-                    "help_text": "If none provided, will be generated automatically from the FASTA reference",
-                    "description": "Path to FASTA genome index file.",
-                    "pattern": "^\\S+\\.fn?a(sta)?\\.fai$",
-                    "fa_icon": "fas fa-file"
-                },
-                "fasta": {
-                    "type": "string",
-                    "format": "file-path",
-                    "exists": true,
-                    "mimetype": "text/plain",
-                    "pattern": "^\\S+\\.fn?a(sta)?(\\.gz)?$",
-                    "description": "Path to FASTA genome file.",
-                    "help_text": "This parameter is *mandatory* if `--genome` is not specified. If you don't have a BWA index available this will be generated for you automatically. Combine with `--save_reference` to save BWA index for future runs.",
-                    "fa_icon": "fas fa-file"
-                },
-                "manifest_bpm": {
-                    "type": "string",
-                    "exists": true,
-                    "format": "file-path",
-                    "fa_icon": "fas fa-file",
-                    "pattern": "^\\S+\\.bpm$",
-                    "description": "Path to the index file for the gnomad tab file with allele frequencies.",
-                    "help_text": "Path to the index of gnomad tab file with CHR/START/REF,ALT/AF"
-                },
-                "manifest_csv": {
-                    "type": "string",
-                    "exists": true,
-                    "format": "file-path",
-                    "fa_icon": "fas fa-file",
-                    "pattern": "^\\S+\\.csv$",
-                    "description": "Path to the index file for the gnomad tab file with allele frequencies.",
-                    "help_text": "Path to the index of gnomad tab file with CHR/START/REF,ALT/AF"
-                },
-                "clusterfile": {
-                    "type": "string",
-                    "exists": true,
-                    "format": "file-path",
-                    "fa_icon": "fas fa-file",
-                    "pattern": "^\\S+\\.egt$",
-                    "description": "Path to the index file for the gnomad tab file with allele frequencies.",
-                    "help_text": "Path to the index of gnomad tab file with CHR/START/REF,ALT/AF"
-                }
-            },
-            "required": []
         },
         "max_job_request_options": {
             "title": "Max job request options",
@@ -251,9 +195,6 @@
     "allOf": [
         {
             "$ref": "#/definitions/input_output_options"
-        },
-        {
-            "$ref": "#/definitions/reference_file_options"
         },
         {
             "$ref": "#/definitions/max_job_request_options"

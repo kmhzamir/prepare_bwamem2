@@ -1,88 +1,140 @@
-Sep-24 15:48:23.993 [main] DEBUG nextflow.cli.Launcher - $> nextflow main.nf -c nextflow.config -profile docker -params-file test.json -w run04-GSA-38/work
-Sep-24 15:48:24.141 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 23.10.1
-Sep-24 15:48:24.163 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; embedded=false; plugins-dir=/root/.nextflow/plugins; core-plugins: nf-amazon@2.1.4,nf-azure@1.3.3,nf-cloudcache@0.3.0,nf-codecommit@0.1.5,nf-console@1.0.6,nf-ga4gh@1.1.0,nf-google@1.8.3,nf-tower@1.6.3,nf-wave@1.0.1
-Sep-24 15:48:24.174 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
-Sep-24 15:48:24.175 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
-Sep-24 15:48:24.178 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.4.1 in 'deployment' mode
-Sep-24 15:48:24.188 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
-Sep-24 15:48:24.207 [main] DEBUG nextflow.config.ConfigBuilder - Found config local: /home/user2/Downloads/idat2vcf/nextflow.config
-Sep-24 15:48:24.209 [main] DEBUG nextflow.config.ConfigBuilder - User config file: /home/user2/Downloads/idat2vcf/nextflow.config
-Sep-24 15:48:24.210 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /home/user2/Downloads/idat2vcf/nextflow.config
-Sep-24 15:48:24.210 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /home/user2/Downloads/idat2vcf/nextflow.config
-Sep-24 15:48:24.246 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `docker`
-Sep-24 15:48:25.279 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `docker`
-Sep-24 15:48:25.403 [main] DEBUG nextflow.config.ConfigBuilder - Available config profiles: [gitpod, debug, shifter, mamba, charliecloud, apptainer, conda, singularity, arm, docker, podman]
-Sep-24 15:48:25.438 [main] DEBUG nextflow.cli.CmdRun - Applied DSL=2 from script declararion
-Sep-24 15:48:25.472 [main] INFO  nextflow.cli.CmdRun - Launching `main.nf` [soggy_cori] DSL2 - revision: 7361229cb0
-Sep-24 15:48:25.473 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins declared=[nf-validation@1.1.3]
-Sep-24 15:48:25.473 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
-Sep-24 15:48:25.474 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins resolved requirement=[nf-validation@1.1.3]
-Sep-24 15:48:25.474 [main] DEBUG nextflow.plugin.PluginUpdater - Installing plugin nf-validation version: 1.1.3
-Sep-24 15:48:25.487 [main] INFO  org.pf4j.AbstractPluginManager - Plugin 'nf-validation@1.1.3' resolved
-Sep-24 15:48:25.487 [main] INFO  org.pf4j.AbstractPluginManager - Start plugin 'nf-validation@1.1.3'
-Sep-24 15:48:25.504 [main] DEBUG nextflow.plugin.BasePlugin - Plugin started nf-validation@1.1.3
-Sep-24 15:48:25.527 [main] DEBUG n.secret.LocalSecretsProvider - Secrets store: /root/.nextflow/secrets/store.json
-Sep-24 15:48:25.532 [main] DEBUG nextflow.secret.SecretsLoader - Discovered secrets providers: [nextflow.secret.LocalSecretsProvider@5b5ac798] - activable => nextflow.secret.LocalSecretsProvider@5b5ac798
-Sep-24 15:48:25.590 [main] DEBUG nextflow.Session - Session UUID: e827ba93-d92b-4036-b22f-97c34d2a4018
-Sep-24 15:48:25.590 [main] DEBUG nextflow.Session - Run name: soggy_cori
-Sep-24 15:48:25.591 [main] DEBUG nextflow.Session - Executor pool size: 20
-Sep-24 15:48:25.600 [main] DEBUG nextflow.file.FilePorter - File porter settings maxRetries=3; maxTransfers=50; pollTimeout=null
-Sep-24 15:48:25.605 [main] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'FileTransfer' minSize=10; maxSize=60; workQueue=LinkedBlockingQueue[10000]; allowCoreThreadTimeout=false
-Sep-24 15:48:25.626 [main] DEBUG nextflow.cli.CmdRun - 
+Oct-07 11:28:04.882 [main] DEBUG nextflow.cli.Launcher - $> nextflow main.nf -c nextflow.config -profile docker --input /home/user2/Downloads/refgenome/hg19-nochr/Homo_sapiens_assembly19.fa --outdir run01/
+Oct-07 11:28:05.045 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 23.10.1
+Oct-07 11:28:05.074 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; embedded=false; plugins-dir=/root/.nextflow/plugins; core-plugins: nf-amazon@2.1.4,nf-azure@1.3.3,nf-cloudcache@0.3.0,nf-codecommit@0.1.5,nf-console@1.0.6,nf-ga4gh@1.1.0,nf-google@1.8.3,nf-tower@1.6.3,nf-wave@1.0.1
+Oct-07 11:28:05.088 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+Oct-07 11:28:05.089 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+Oct-07 11:28:05.093 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.4.1 in 'deployment' mode
+Oct-07 11:28:05.105 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+Oct-07 11:28:05.124 [main] DEBUG nextflow.config.ConfigBuilder - Found config local: /home/user2/Downloads/prepare_reference/nextflow.config
+Oct-07 11:28:05.127 [main] DEBUG nextflow.config.ConfigBuilder - User config file: /home/user2/Downloads/prepare_reference/nextflow.config
+Oct-07 11:28:05.128 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /home/user2/Downloads/prepare_reference/nextflow.config
+Oct-07 11:28:05.128 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /home/user2/Downloads/prepare_reference/nextflow.config
+Oct-07 11:28:05.157 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `docker`
+Oct-07 11:28:06.289 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `docker`
+Oct-07 11:28:06.414 [main] DEBUG nextflow.config.ConfigBuilder - Available config profiles: [gitpod, debug, shifter, mamba, charliecloud, apptainer, conda, singularity, arm, docker, podman]
+Oct-07 11:28:06.456 [main] DEBUG nextflow.cli.CmdRun - Applied DSL=2 from script declararion
+Oct-07 11:28:06.500 [main] INFO  nextflow.cli.CmdRun - Launching `main.nf` [dreamy_celsius] DSL2 - revision: 8f6bdba686
+Oct-07 11:28:06.500 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins declared=[nf-validation@1.1.3]
+Oct-07 11:28:06.501 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
+Oct-07 11:28:06.501 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins resolved requirement=[nf-validation@1.1.3]
+Oct-07 11:28:06.501 [main] DEBUG nextflow.plugin.PluginUpdater - Installing plugin nf-validation version: 1.1.3
+Oct-07 11:28:06.512 [main] INFO  org.pf4j.AbstractPluginManager - Plugin 'nf-validation@1.1.3' resolved
+Oct-07 11:28:06.515 [main] INFO  org.pf4j.AbstractPluginManager - Start plugin 'nf-validation@1.1.3'
+Oct-07 11:28:06.531 [main] DEBUG nextflow.plugin.BasePlugin - Plugin started nf-validation@1.1.3
+Oct-07 11:28:06.557 [main] DEBUG n.secret.LocalSecretsProvider - Secrets store: /root/.nextflow/secrets/store.json
+Oct-07 11:28:06.562 [main] DEBUG nextflow.secret.SecretsLoader - Discovered secrets providers: [nextflow.secret.LocalSecretsProvider@3f598450] - activable => nextflow.secret.LocalSecretsProvider@3f598450
+Oct-07 11:28:06.631 [main] DEBUG nextflow.Session - Session UUID: cad64ff4-95fb-4039-b319-c65e1c81fc01
+Oct-07 11:28:06.632 [main] DEBUG nextflow.Session - Run name: dreamy_celsius
+Oct-07 11:28:06.632 [main] DEBUG nextflow.Session - Executor pool size: 20
+Oct-07 11:28:06.643 [main] DEBUG nextflow.file.FilePorter - File porter settings maxRetries=3; maxTransfers=50; pollTimeout=null
+Oct-07 11:28:06.649 [main] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'FileTransfer' minSize=10; maxSize=60; workQueue=LinkedBlockingQueue[10000]; allowCoreThreadTimeout=false
+Oct-07 11:28:06.679 [main] DEBUG nextflow.cli.CmdRun - 
   Version: 23.10.1 build 5891
   Created: 12-01-2024 22:01 UTC (13-01-2024 06:01 MYST)
   System: Linux 6.8.0-45-generic
   Runtime: Groovy 3.0.19 on OpenJDK 64-Bit Server VM 19.0.2+7-Ubuntu-0ubuntu322.04
   Encoding: UTF-8 (UTF-8)
-  Process: 82863@user2-LPC2 [127.0.1.1]
-  CPUs: 20 - Mem: 31.1 GB (16.3 GB) - Swap: 0 (0)
-Sep-24 15:48:25.658 [main] DEBUG nextflow.Session - Work-dir: /home/user2/Downloads/idat2vcf/run04-GSA-38/work [ext2/ext3]
-Sep-24 15:48:25.659 [main] DEBUG nextflow.Session - Script base path does not exist or is not a directory: /home/user2/Downloads/idat2vcf/bin
-Sep-24 15:48:25.672 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[]
-Sep-24 15:48:25.682 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
-Sep-24 15:48:25.731 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
-Sep-24 15:48:25.740 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 21; maxThreads: 1000
-Sep-24 15:48:25.842 [main] DEBUG nextflow.Session - Session start
-Sep-24 15:48:25.846 [main] DEBUG nextflow.trace.TraceFileObserver - Workflow started -- trace file: /home/user2/Downloads/idat2vcf/run04-GSA-38/pipeline_info/execution_trace_2024-09-24_15-48-25.txt
-Sep-24 15:48:25.858 [main] DEBUG nextflow.Session - Using default localLib path: /home/user2/Downloads/idat2vcf/lib
-Sep-24 15:48:25.863 [main] DEBUG nextflow.Session - Adding to the classpath library: /home/user2/Downloads/idat2vcf/lib
-Sep-24 15:48:26.328 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
-Sep-24 15:48:26.339 [main] WARN  nextflow.script.ScriptBinding - Access to undefined parameter `genomes` -- Initialise it to a default value eg. `params.genomes = some_value`
-Sep-24 15:48:26.346 [main] DEBUG nextflow.script.IncludeDef - Loading included plugin extensions with names: [validateParameters:validateParameters, paramsHelp:paramsHelp]; plugin Id: nf-validation
-Sep-24 15:48:26.361 [main] DEBUG nextflow.validation.SchemaValidator - Starting parameters validation
-Sep-24 15:48:26.462 [main] ERROR nextflow.validation.SchemaValidator - ERROR: Validation of pipeline parameters failed!
-Sep-24 15:48:26.476 [main] DEBUG nextflow.script.ScriptRunner - Parsed script files:
-  Script_d1d3b931a748b947: /home/user2/Downloads/idat2vcf/main.nf
-Sep-24 15:48:26.477 [main] DEBUG nextflow.Session - Session aborted -- Cause: [0;31mThe following invalid input values have been detected:
+  Process: 19557@user2-LPC2 [127.0.1.1]
+  CPUs: 20 - Mem: 31.1 GB (9 GB) - Swap: 0 (0)
+Oct-07 11:28:06.706 [main] DEBUG nextflow.Session - Work-dir: /home/user2/Downloads/prepare_reference/work [ext2/ext3]
+Oct-07 11:28:06.707 [main] DEBUG nextflow.Session - Script base path does not exist or is not a directory: /home/user2/Downloads/prepare_reference/bin
+Oct-07 11:28:06.721 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[]
+Oct-07 11:28:06.731 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
+Oct-07 11:28:06.779 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
+Oct-07 11:28:06.793 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 21; maxThreads: 1000
+Oct-07 11:28:06.907 [main] DEBUG nextflow.Session - Session start
+Oct-07 11:28:06.912 [main] DEBUG nextflow.trace.TraceFileObserver - Workflow started -- trace file: /home/user2/Downloads/prepare_reference/run01/pipeline_info/execution_trace_2024-10-07_11-28-06.txt
+Oct-07 11:28:06.926 [main] DEBUG nextflow.Session - Using default localLib path: /home/user2/Downloads/prepare_reference/lib
+Oct-07 11:28:06.931 [main] DEBUG nextflow.Session - Adding to the classpath library: /home/user2/Downloads/prepare_reference/lib
+Oct-07 11:28:07.418 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Oct-07 11:28:07.432 [main] DEBUG nextflow.script.IncludeDef - Loading included plugin extensions with names: [validateParameters:validateParameters, paramsHelp:paramsHelp]; plugin Id: nf-validation
+Oct-07 11:28:07.453 [main] DEBUG nextflow.validation.SchemaValidator - Starting parameters validation
+Oct-07 11:28:07.605 [main] DEBUG nextflow.validation.SchemaValidator - Finishing parameters validation
+Oct-07 11:28:07.817 [main] DEBUG nextflow.script.IncludeDef - Loading included plugin extensions with names: [paramsSummaryLog:paramsSummaryLog, paramsSummaryMap:paramsSummaryMap, fromSamplesheet:fromSamplesheet]; plugin Id: nf-validation
+Oct-07 11:28:07.830 [main] INFO  nextflow.Nextflow - 
 
-* --fasta: the file or directory '/home/user2/Downloads/hg38/hg38.fa' does not exist.
-* --fai: the file or directory '/home/user2/Downloads/hg38/hg38.fa.fai' does not exist.
-[0m
+-[2m----------------------------------------------------[0m-
+                                        [0;32m,--.[0;30m/[0;32m,-.[0m
+[0;34m        ___     __   __   __   ___     [0;32m/,-._.--~'[0m
+[0;34m  |\ | |__  __ /  ` /  \ |__) |__         [0;33m}  {[0m
+[0;34m  | \| |       \__, \__/ |  \ |___     [0;32m\`-._,-`-,[0m
+                                        [0;32m`._,._,'[0m
+[0;35m  synapsys/idat2vcf v1.0[0m
+-[2m----------------------------------------------------[0m-
+[1mCore Nextflow options[0m
+  [0;34mrunName        : [0;32mdreamy_celsius[0m
+  [0;34mcontainerEngine: [0;32mdocker[0m
+  [0;34mlaunchDir      : [0;32m/home/user2/Downloads/prepare_reference[0m
+  [0;34mworkDir        : [0;32m/home/user2/Downloads/prepare_reference/work[0m
+  [0;34mprojectDir     : [0;32m/home/user2/Downloads/prepare_reference[0m
+  [0;34muserName       : [0;32mroot[0m
+  [0;34mprofile        : [0;32mdocker[0m
+  [0;34mconfigFiles    : [0;32m[0m
 
-Sep-24 15:48:26.489 [main] DEBUG nextflow.cli.Launcher - Operation aborted
-nextflow.validation.SchemaValidationException: [0;31mThe following invalid input values have been detected:
+[1mInput/output options[0m
+  [0;34minput          : [0;32m/home/user2/Downloads/refgenome/hg19-nochr/Homo_sapiens_assembly19.fa[0m
+  [0;34moutdir         : [0;32mrun01/[0m
 
-* --fasta: the file or directory '/home/user2/Downloads/hg38/hg38.fa' does not exist.
-* --fai: the file or directory '/home/user2/Downloads/hg38/hg38.fa.fai' does not exist.
-[0m
+!! Only displaying parameters that differ from the pipeline defaults !!
+-[2m----------------------------------------------------[0m-
+If you use synapsys/idat2vcf for your analysis please cite:
 
-	at nextflow.validation.SchemaValidator.validateParameters(SchemaValidator.groovy:392)
-	at nextflow.validation.SchemaValidator.validateParameters(SchemaValidator.groovy)
+* The nf-core framework
+  https://doi.org/10.1038/s41587-020-0439-x
+
+* Software dependencies
+  https://github.com/synapsys/idat2vcf/blob/master/CITATIONS.md
+
+Oct-07 11:28:07.837 [main] WARN  nextflow.script.ScriptBinding - Access to undefined parameter `genomes` -- Initialise it to a default value eg. `params.genomes = some_value`
+Oct-07 11:28:07.837 [main] WARN  nextflow.script.ScriptBinding - Access to undefined parameter `fasta` -- Initialise it to a default value eg. `params.fasta = some_value`
+Oct-07 11:28:07.840 [main] INFO  nextflow.script.BaseScript - params.fasta not set.
+Oct-07 11:28:07.854 [main] DEBUG nextflow.script.ScriptRunner - Parsed script files:
+  Script_98880724bc53f7e4: /home/user2/Downloads/prepare_reference/./workflows/idat2vcf.nf
+  Script_83628dd7abf2cd8d: /home/user2/Downloads/prepare_reference/main.nf
+Oct-07 11:28:07.855 [main] DEBUG nextflow.Session - Session aborted -- Cause: 
+Set missing parameters and restart the run. For more information please check usage documentation on github.
+Oct-07 11:28:07.864 [main] ERROR nextflow.cli.Launcher - @unknown
+nextflow.exception.WorkflowScriptErrorException: 
+Set missing parameters and restart the run. For more information please check usage documentation on github.
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:484)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:72)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrapNoCoerce.callConstructor(ConstructorSite.java:105)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallConstructor(CallSiteArray.java:59)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:263)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
+	at nextflow.Nextflow.error(Nextflow.groovy:226)
+	at nextflow.Nextflow$error$0.callStatic(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallStatic(CallSiteArray.java:55)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callStatic(AbstractCallSite.java:217)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callStatic(AbstractCallSite.java:231)
+	at Script_98880724bc53f7e4.runScript(Script_98880724bc53f7e4:39)
+	at nextflow.script.BaseScript.run0(BaseScript.groovy:144)
+	at nextflow.script.BaseScript.run(BaseScript.groovy:192)
+	at nextflow.script.ScriptParser.runScript(ScriptParser.groovy:236)
+	at nextflow.script.ScriptParser.runScript(ScriptParser.groovy:222)
+	at nextflow.script.IncludeDef.memoizedMethodPriv$loadModule0PathMapSession(IncludeDef.groovy:151)
+	at nextflow.script.IncludeDef.access$0(IncludeDef.groovy)
+	at nextflow.script.IncludeDef$__clinit__closure2.doCall(IncludeDef.groovy)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
-	at nextflow.script.FunctionDef.invoke_a(FunctionDef.groovy:64)
-	at nextflow.script.ComponentDef.invoke_o(ComponentDef.groovy:40)
-	at nextflow.script.WorkflowBinding.invokeMethod(WorkflowBinding.groovy:102)
-	at groovy.lang.GroovyObject$invokeMethod.call(Unknown Source)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:107)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
+	at org.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeMethod(ClosureMetaClass.java:274)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1030)
+	at groovy.lang.Closure.call(Closure.java:427)
+	at org.codehaus.groovy.runtime.memoize.Memoize$MemoizeFunction.lambda$call$0(Memoize.java:137)
+	at org.codehaus.groovy.runtime.memoize.ConcurrentCommonCache.getAndPut(ConcurrentCommonCache.java:137)
+	at org.codehaus.groovy.runtime.memoize.ConcurrentCommonCache.getAndPut(ConcurrentCommonCache.java:113)
+	at org.codehaus.groovy.runtime.memoize.Memoize$MemoizeFunction.call(Memoize.java:136)
+	at nextflow.script.IncludeDef.loadModule0(IncludeDef.groovy)
+	at nextflow.script.IncludeDef.load0(IncludeDef.groovy:123)
+	at nextflow.script.IncludeDef$load0$1.call(Unknown Source)
 	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:47)
 	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:125)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:148)
-	at nextflow.script.BaseScript.invokeMethod(BaseScript.groovy:140)
-	at org.codehaus.groovy.runtime.callsite.PogoMetaClassSite.callCurrent(PogoMetaClassSite.java:68)
-	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallCurrent(CallSiteArray.java:51)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:171)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:176)
-	at Script_d1d3b931a748b947.runScript(Script_d1d3b931a748b947:44)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:139)
+	at Script_83628dd7abf2cd8d.runScript(Script_83628dd7abf2cd8d:50)
 	at nextflow.script.BaseScript.run0(BaseScript.groovy:144)
 	at nextflow.script.BaseScript.run(BaseScript.groovy:192)
 	at nextflow.script.ScriptParser.runScript(ScriptParser.groovy:236)

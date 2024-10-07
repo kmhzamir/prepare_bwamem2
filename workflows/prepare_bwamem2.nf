@@ -22,7 +22,6 @@ WorkflowRaredisease.initialise(params, log)
 */
 
 def mandatoryParams = [
-    "fasta",
     "input",
 
 ]
@@ -47,8 +46,7 @@ if (missingParamsCount>0) {
 
 // SUBWORKFLOWS
 
-include { DRAGENA_IDAT2GTC                                   } from '../subworkflows/dragena_idat2gtc'
-include { DRAGENA_GTC2VCF                                    } from '../subworkflows/dragena_gtc2vcf'
+include { BWAMEM2_INDEX                                      } from '../subworkflows/bwamem2/index/main'
 
 
 /*
@@ -60,72 +58,18 @@ include { DRAGENA_GTC2VCF                                    } from '../subworkf
 // Info required for completion email and summary
 def multiqc_report = []
 
-workflow IDAT2VCF {
+workflow PREPARE_BWAMEM2 {
 
     ch_versions = Channel.empty()
 
     // Initialize read, sample, and case_info channels
-    ch_input = Channel.fromPath(params.input)
-    Channel.fromSamplesheet("input")
-        .tap { ch_original_input }
-        .map { meta, idat1, idat2 -> 
-            [meta, idat1, idat2]
-        }
-        .reduce([:]) { counts, entry -> // Get counts of each sample in the samplesheet
-            def (meta, idat1, idat2) = entry
-            counts[meta.sample] = (counts[meta.sample] ?: 0) + 1
-            counts
-        }
-        .combine(ch_original_input)
-        .map { counts, meta, idat1, idat2 ->
-            def new_meta = meta
-            return [new_meta, [idat1, idat2]]
-        }
-        .tap { ch_input_counts }
-        .map { meta, idats -> idats }
-        .reduce([:]) { counts, idats -> // Get line number for each row to construct unique sample ids
-            counts[idats] = counts.size() + 1
-            return counts
-        }
-        .combine(ch_input_counts)
-        .map { lineno, meta, idats -> // Append line number to sample id
-            def new_meta = meta + [id: meta.sample]
-            return [new_meta, idats]
-        }
-        .set { ch_reads }
+    ch_input = Channel.fromPath(params.input).map { it -> [[id:it[0].simpleName], it] }.collect()
 
 
-
-    // Initialize file channels for PREPARE_REFERENCES subworkflow
-    ch_genome_fasta             = Channel.fromPath(params.fasta).map { it -> [[id:it[0].simpleName], it] }.collect()
-    ch_genome_fai               = params.fai                        ? Channel.fromPath(params.fai).map {it -> [[id:it[0].simpleName], it]}.collect()
-                                                                    : Channel.empty()                                                  
-    manifest_bpm                = params.manifest_bpm               ? Channel.fromPath(params.manifest_bpm).collect()
-                                                                    : Channel.value([])
-    manifest_csv                = params.manifest_csv               ? Channel.fromPath(params.manifest_csv).collect()
-                                                                    : Channel.value([]) 
-    clusterfile                 = params.clusterfile                ? Channel.fromPath(params.clusterfile).collect()
-                                                                    : Channel.value([]) 
-    
-
-    //
-    // DRAGENA_IDAT2GTC.
-    //
-    DRAGENA_IDAT2GTC (
-        ch_reads,
-        manifest_bpm,
-        clusterfile,
+    BWAMEM2_INDEX (
+        ch_input
     )
-    ch_versions   = ch_versions.mix(DRAGENA_IDAT2GTC.out.versions)
-
-    DRAGENA_GTC2VCF (
-        DRAGENA_IDAT2GTC.out.gtc,
-        manifest_bpm,
-        manifest_csv,
-        ch_genome_fasta,
-        ch_genome_fai
-    )
-    ch_versions   = ch_versions.mix(DRAGENA_GTC2VCF.out.versions)
+    ch_versions   = ch_versions.mix(BWAMEM2_INDEX.out.versions)
 
 }
 /*
